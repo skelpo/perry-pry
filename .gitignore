@@ -1,0 +1,43 @@
+# Compiled binaries
+/pry
+/pry_test
+/debug_test
+/minimal
+/test_tree
+/test_scroll
+/pry-linux
+
+# Object files
+*.o
+
+# App bundles
+*.app/
+
+# macOS metadata
+.DS_Store
+
+# Logs
+logs/
+
+# Android build & IDE
+android/.gradle/
+android/.idea/
+android/.kotlin/
+android/.run/
+android/app/build/
+android/build/
+android/app/src/main/jniLibs/
+
+# Android secrets
+android/keystore.properties
+android/release-keystore.jks
+android/local.properties
+
+# Xcode build artifacts
+xcode/build/
+xcode/*.o
+xcuserdata/
+*.xcworkspace/
+
+# Test artifacts
+test_screenshots/

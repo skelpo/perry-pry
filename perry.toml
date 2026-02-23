@@ -1,0 +1,5 @@
+[project]
+name = "pry"
+version = "1.0.0"
+description = "A fast, native JSON viewer"
+entry = "src/main.ts"

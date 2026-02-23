@@ -1,0 +1,129 @@
+name: Pry
+options:
+  bundleIdPrefix: com.skelpo
+  deploymentTarget:
+    macOS: "15.0"
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  Pry:
+    type: application
+    platform: macOS
+    sources:
+      - path: Pry
+        excludes:
+          - "**/*.plist"
+          - "**/*.entitlements"
+          - "**/*.xcprivacy"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.skelpo.pry
+        INFOPLIST_FILE: Pry/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Pry/Pry.entitlements
+        CODE_SIGN_STYLE: Manual
+        DEVELOPMENT_TEAM: K6UW5YV9F7
+        ENABLE_HARDENED_RUNTIME: true
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_NAME: Pry
+        SWIFT_VERSION: "5.9"
+        MACOSX_DEPLOYMENT_TARGET: "15.0"
+        # Prevent Xcode from stripping/processing the Perry binary
+        STRIP_INSTALLED_PRODUCT: NO
+        COPY_PHASE_STRIP: NO
+        DEAD_CODE_STRIPPING: NO
+        # Use dwarf (not dwarf-with-dsym) — dsymutil can't parse the Perry binary
+        DEBUG_INFORMATION_FORMAT: dwarf
+      configs:
+        Debug:
+          CODE_SIGN_IDENTITY: "Apple Development"
+          PROVISIONING_PROFILE_SPECIFIER: ""
+        Release:
+          CODE_SIGN_IDENTITY: "3rd Party Mac Developer Application"
+          PROVISIONING_PROFILE_SPECIFIER: ""
+    postBuildScripts:
+      - name: "Replace binary with Perry-compiled pry"
+        script: |
+          PERRY_BINARY="${PROJECT_DIR}/../pry"
+          if [ -f "$PERRY_BINARY" ]; then
+            echo "Replacing placeholder binary with Perry-compiled pry"
+            cp "$PERRY_BINARY" "${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}"
+          else
+            echo "error: Perry binary not found at $PERRY_BINARY"
+            echo "error: Run the Perry compiler first: cd /Users/amlug/projects/perry && cargo run --release -- compile /Users/amlug/projects/perry-pry/src/main.ts -o /Users/amlug/projects/perry-pry/pry"
+            exit 1
+          fi
+        basedOnDependencyAnalysis: false
+    attributes:
+      ProvisioningStyle: Manual
+
+  Pry iOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: PryiOS
+        excludes:
+          - "**/*.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.skelpo.pry
+        INFOPLIST_FILE: PryiOS/Info.plist
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: K6UW5YV9F7
+        PRODUCT_NAME: Pry
+        TARGETED_DEVICE_FAMILY: "1,2"
+        IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # Prevent Xcode from stripping/processing the Perry binary
+        STRIP_INSTALLED_PRODUCT: NO
+        COPY_PHASE_STRIP: NO
+        DEAD_CODE_STRIPPING: NO
+        DEBUG_INFORMATION_FORMAT: dwarf
+        # Disable Xcode dylib injection — these crash the Perry binary
+        ENABLE_PREVIEWS: NO
+        ENABLE_DEBUG_DYLIB: NO
+    postBuildScripts:
+      - name: "Build with Perry and replace binary"
+        basedOnDependencyAnalysis: false
+        script: |
+          set -e
+
+          PERRY_DIR="/Users/amlug/projects/perry"
+          PERRY_COMPILER="${PERRY_DIR}/target/release/perry"
+          PERRY_PRY_DIR="${PROJECT_DIR}/.."
+          BUILD_TMP="/tmp/perry-pry-xcode-build"
+
+          if [ ! -f "${PERRY_COMPILER}" ]; then
+            echo "error: Perry compiler not found at ${PERRY_COMPILER}"
+            echo "error: Run: cd ${PERRY_DIR} && cargo build --release"
+            exit 1
+          fi
+
+          # Detect simulator vs device from Xcode environment
+          if [ "${PLATFORM_NAME}" = "iphonesimulator" ]; then
+            PERRY_TARGET="ios-simulator"
+          else
+            PERRY_TARGET="ios"
+          fi
+
+          echo "Compiling main_ios.ts with Perry (target: ${PERRY_TARGET})..."
+          cd "${PERRY_DIR}"
+          "${PERRY_COMPILER}" compile "${PERRY_PRY_DIR}/src/main_ios.ts" -o "${BUILD_TMP}" --target "${PERRY_TARGET}"
+
+          echo "Replacing Xcode binary with Perry output..."
+          cp "${BUILD_TMP}.app/$(basename "${BUILD_TMP}")" "${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}"
+
+          # Remove Xcode-injected dylibs that crash the Perry binary
+          rm -f "${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/__preview.dylib"
+          rm -f "${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/${PRODUCT_NAME}.debug.dylib"
+          rm -f "${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/Pry.debug.dylib"
+
+          echo "Perry iOS build complete."
+    attributes:
+      ProvisioningStyle: Automatic

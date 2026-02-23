@@ -1,0 +1,108 @@
+{
+  "company": "Acme Corp",
+  "founded": 2015,
+  "active": true,
+  "headquarters": {
+    "city": "San Francisco",
+    "state": "California",
+    "country": "US",
+    "coordinates": {
+      "lat": 37.7749,
+      "lng": -122.4194
+    }
+  },
+  "departments": [
+    {
+      "name": "Engineering",
+      "headcount": 150,
+      "teams": [
+        {"name": "Frontend", "members": 30, "lead": "Alice"},
+        {"name": "Backend", "members": 45, "lead": "Bob"},
+        {"name": "Infrastructure", "members": 25, "lead": "Charlie"},
+        {"name": "Mobile", "members": 20, "lead": "Diana"},
+        {"name": "QA", "members": 15, "lead": "Eve"},
+        {"name": "Security", "members": 15, "lead": "Frank"}
+      ]
+    },
+    {
+      "name": "Product",
+      "headcount": 40,
+      "teams": [
+        {"name": "Core Product", "members": 15, "lead": "Grace"},
+        {"name": "Growth", "members": 12, "lead": "Hank"},
+        {"name": "Analytics", "members": 13, "lead": "Ivy"}
+      ]
+    },
+    {
+      "name": "Design",
+      "headcount": 25,
+      "teams": [
+        {"name": "UX", "members": 12, "lead": "Jack"},
+        {"name": "Visual", "members": 8, "lead": "Karen"},
+        {"name": "Research", "members": 5, "lead": "Leo"}
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Widget Pro",
+      "version": "3.2.1",
+      "active": true,
+      "pricing": {"monthly": 29.99, "yearly": 299.99, "enterprise": null},
+      "features": ["dashboard", "analytics", "api", "webhooks", "sso"],
+      "metrics": {
+        "users": 15000,
+        "revenue": 449850,
+        "churn_rate": 0.023,
+        "nps": 72
+      }
+    },
+    {
+      "id": "prod-002",
+      "name": "Widget Lite",
+      "version": "1.5.0",
+      "active": true,
+      "pricing": {"monthly": 9.99, "yearly": 99.99, "enterprise": null},
+      "features": ["dashboard", "basic-analytics"],
+      "metrics": {
+        "users": 45000,
+        "revenue": 449550,
+        "churn_rate": 0.045,
+        "nps": 65
+      }
+    },
+    {
+      "id": "prod-003",
+      "name": "Widget Enterprise",
+      "version": "5.0.0",
+      "active": false,
+      "pricing": {"monthly": null, "yearly": null, "enterprise": "custom"},
+      "features": ["dashboard", "analytics", "api", "webhooks", "sso", "audit-log", "custom-branding", "dedicated-support"],
+      "metrics": {
+        "users": 500,
+        "revenue": 2500000,
+        "churn_rate": 0.008,
+        "nps": 85
+      }
+    }
+  ],
+  "config": {
+    "api_version": "v2",
+    "rate_limit": 1000,
+    "timeout_ms": 30000,
+    "features": {
+      "dark_mode": true,
+      "beta_access": false,
+      "two_factor": true,
+      "webhooks_v2": true
+    },
+    "regions": ["us-east-1", "us-west-2", "eu-west-1", "ap-southeast-1"],
+    "maintenance_window": {
+      "day": "Sunday",
+      "start": "02:00",
+      "end": "06:00",
+      "timezone": "UTC"
+    }
+  }
+}

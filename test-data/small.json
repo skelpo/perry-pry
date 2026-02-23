@@ -1,0 +1,10 @@
+{
+  "name": "Pry",
+  "version": "1.0.0",
+  "description": "A fast, native JSON viewer",
+  "author": "Perry",
+  "active": true,
+  "downloads": 42,
+  "license": null,
+  "tags": ["json", "viewer", "native"]
+}

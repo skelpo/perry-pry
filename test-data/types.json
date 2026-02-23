@@ -1,0 +1,20 @@
+{
+  "string": "hello world",
+  "number_int": 42,
+  "number_float": 3.14159,
+  "number_negative": -100,
+  "number_zero": 0,
+  "boolean_true": true,
+  "boolean_false": false,
+  "null_value": null,
+  "empty_string": "",
+  "empty_object": {},
+  "empty_array": [],
+  "nested_object": {
+    "inner_key": "inner_value",
+    "inner_number": 99
+  },
+  "array_mixed": [1, "two", true, null, {"nested": true}],
+  "unicode": "Hello world",
+  "long_string": "This is a relatively long string that might need to be truncated when displayed in the tree view to keep things readable and prevent horizontal scrolling issues"
+}

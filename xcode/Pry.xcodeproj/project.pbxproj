@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2863358E0F8B5ECDE7588FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284D6BE26BE844475D576FAE /* Assets.xcassets */; };
+		2E5F8F2F227462503710B600 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA475C27B360059FFC567A2C /* main.m */; };
+		DC19239DBE168DD3E47B406B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A8976EE2B054A4677B3D6C /* Assets.xcassets */; };
+		FBFBC3FEA6846DDBC221FF95 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22947C383FED253857D13F04 /* main.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18A8976EE2B054A4677B3D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22947C383FED253857D13F04 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		284D6BE26BE844475D576FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47146818F0B12FE63DC9F9A3 /* Pry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		877156906B13EB3E8935700B /* Pry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA475C27B360059FFC567A2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2ACC1E7E89854A89295B4C06 = {
+			isa = PBXGroup;
+			children = (
+				C7EF131EF9B59D4C2F50AC7E /* Pry */,
+				41F8AA6DBB0485819BADE794 /* PryiOS */,
+				530C482184533CB9F53E0B60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41F8AA6DBB0485819BADE794 /* PryiOS */ = {
+			isa = PBXGroup;
+			children = (
+				284D6BE26BE844475D576FAE /* Assets.xcassets */,
+				AA475C27B360059FFC567A2C /* main.m */,
+			);
+			path = PryiOS;
+			sourceTree = "<group>";
+		};
+		530C482184533CB9F53E0B60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				877156906B13EB3E8935700B /* Pry.app */,
+				47146818F0B12FE63DC9F9A3 /* Pry.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7EF131EF9B59D4C2F50AC7E /* Pry */ = {
+			isa = PBXGroup;
+			children = (
+				18A8976EE2B054A4677B3D6C /* Assets.xcassets */,
+				22947C383FED253857D13F04 /* main.swift */,
+			);
+			path = Pry;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E4F7A7EE561976DA5BCD213 /* Pry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2B08A8464B00480A548E823 /* Build configuration list for PBXNativeTarget "Pry" */;
+			buildPhases = (
+				F740C7A043F7FDBEE9141F94 /* Sources */,
+				535AC675A60C1EA383B981FA /* Resources */,
+				D0F48E1F02F6E0BAD737FBA8 /* Replace binary with Perry-compiled pry */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pry;
+			packageProductDependencies = (
+			);
+			productName = Pry;
+			productReference = 47146818F0B12FE63DC9F9A3 /* Pry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		886232247B9B691B75B7BBDC /* Pry iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB0354931A96157C86ACE394 /* Build configuration list for PBXNativeTarget "Pry iOS" */;
+			buildPhases = (
+				1506D681E0E79DCF7B64B2AF /* Sources */,
+				DEC1DD73E752248D16170B4E /* Resources */,
+				9706D0BD9DEC7EE69AFAA292 /* Build with Perry and replace binary */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pry iOS";
+			packageProductDependencies = (
+			);
+			productName = "Pry iOS";
+			productReference = 877156906B13EB3E8935700B /* Pry.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF71BFD02FE367B193542ABD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					4E4F7A7EE561976DA5BCD213 = {
+						DevelopmentTeam = K6UW5YV9F7;
+						ProvisioningStyle = Manual;
+					};
+					886232247B9B691B75B7BBDC = {
+						DevelopmentTeam = K6UW5YV9F7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 72E1360EF10FF31BF7B0976F /* Build configuration list for PBXProject "Pry" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2ACC1E7E89854A89295B4C06;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E4F7A7EE561976DA5BCD213 /* Pry */,
+				886232247B9B691B75B7BBDC /* Pry iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		535AC675A60C1EA383B981FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC19239DBE168DD3E47B406B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEC1DD73E752248D16170B4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2863358E0F8B5ECDE7588FFE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9706D0BD9DEC7EE69AFAA292 /* Build with Perry and replace binary */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build with Perry and replace binary";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nPERRY_DIR=\"/Users/amlug/projects/perry\"\nPERRY_COMPILER=\"${PERRY_DIR}/target/release/perry\"\nPERRY_PRY_DIR=\"${PROJECT_DIR}/..\"\nBUILD_TMP=\"/tmp/perry-pry-xcode-build\"\n\nif [ ! -f \"${PERRY_COMPILER}\" ]; then\n  echo \"error: Perry compiler not found at ${PERRY_COMPILER}\"\n  echo \"error: Run: cd ${PERRY_DIR} && cargo build --release\"\n  exit 1\nfi\n\n# Detect simulator vs device from Xcode environment\nif [ \"${PLATFORM_NAME}\" = \"iphonesimulator\" ]; then\n  PERRY_TARGET=\"ios-simulator\"\nelse\n  PERRY_TARGET=\"ios\"\nfi\n\necho \"Compiling main_ios.ts with Perry (target: ${PERRY_TARGET})...\"\ncd \"${PERRY_DIR}\"\n\"${PERRY_COMPILER}\" compile \"${PERRY_PRY_DIR}/src/main_ios.ts\" -o \"${BUILD_TMP}\" --target \"${PERRY_TARGET}\"\n\necho \"Replacing Xcode binary with Perry output...\"\ncp \"${BUILD_TMP}.app/$(basename \"${BUILD_TMP}\")\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n# Remove Xcode-injected dylibs that crash the Perry binary\nrm -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/__preview.dylib\"\nrm -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/${PRODUCT_NAME}.debug.dylib\"\nrm -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/Pry.debug.dylib\"\n\necho \"Perry iOS build complete.\"\n";
+		};
+		D0F48E1F02F6E0BAD737FBA8 /* Replace binary with Perry-compiled pry */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Replace binary with Perry-compiled pry";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PERRY_BINARY=\"${PROJECT_DIR}/../pry\"\nif [ -f \"$PERRY_BINARY\" ]; then\n  echo \"Replacing placeholder binary with Perry-compiled pry\"\n  cp \"$PERRY_BINARY\" \"${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}\"\nelse\n  echo \"error: Perry binary not found at $PERRY_BINARY\"\n  echo \"error: Run the Perry compiler first: cd /Users/amlug/projects/perry && cargo run --release -- compile /Users/amlug/projects/perry-pry/src/main.ts -o /Users/amlug/projects/perry-pry/pry\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1506D681E0E79DCF7B64B2AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5F8F2F227462503710B600 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F740C7A043F7FDBEE9141F94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFBC3FEA6846DDBC221FF95 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2741BC527180F940F5E14FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K6UW5YV9F7;
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_PREVIEWS = NO;
+				INFOPLIST_FILE = PryiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skelpo.pry;
+				PRODUCT_NAME = Pry;
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2B87C632F9AD75AB15983A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3FBEB411656F0A95DA4BE563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		539B3B35FBD5F1FC0A96984C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K6UW5YV9F7;
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_PREVIEWS = NO;
+				INFOPLIST_FILE = PryiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skelpo.pry;
+				PRODUCT_NAME = Pry;
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		879E53BAC60AB6946DEF547C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pry/Pry.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K6UW5YV9F7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Pry/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skelpo.pry;
+				PRODUCT_NAME = Pry;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		C6E3713D31C24C9093CCC7B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pry/Pry.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K6UW5YV9F7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Pry/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skelpo.pry;
+				PRODUCT_NAME = Pry;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72E1360EF10FF31BF7B0976F /* Build configuration list for PBXProject "Pry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B87C632F9AD75AB15983A99 /* Debug */,
+				3FBEB411656F0A95DA4BE563 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A2B08A8464B00480A548E823 /* Build configuration list for PBXNativeTarget "Pry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				879E53BAC60AB6946DEF547C /* Debug */,
+				C6E3713D31C24C9093CCC7B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BB0354931A96157C86ACE394 /* Build configuration list for PBXNativeTarget "Pry iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				539B3B35FBD5F1FC0A96984C /* Debug */,
+				2741BC527180F940F5E14FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF71BFD02FE367B193542ABD /* Project object */;
+}
