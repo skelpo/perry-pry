@@ -338,7 +338,7 @@ function handleSearch(): void {
   if (searchBarVisible) {
     searchBarVisible = false
     searchQuery = ""
-    matchPaths = []
+    matchPaths = JSON.parse('[]')
     currentMatchIndex = 0
     hideSearchBar()
     rebuild()

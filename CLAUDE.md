@@ -9,15 +9,15 @@ Pry is a native macOS JSON viewer built with the Perry framework. Perry compiles
 ## Build Commands
 
 ```bash
-# Compile the main app
-cd /Users/amlug/projects/perry && cargo run --release -- compile /Users/amlug/projects/perry-pry/src/main.ts -o /Users/amlug/projects/perry-pry/pry
+# Compile the main app (perry repo is expected to be a sibling directory)
+cd /path/to/perry && cargo run --release -- compile /path/to/perry-pry/src/main.ts -o /path/to/perry-pry/pry
 
 # Compile test harnesses
-cd /Users/amlug/projects/perry && cargo run --release -- compile /Users/amlug/projects/perry-pry/src/test_tree.ts -o /Users/amlug/projects/perry-pry/test_tree
-cd /Users/amlug/projects/perry && cargo run --release -- compile /Users/amlug/projects/perry-pry/src/minimal.ts -o /Users/amlug/projects/perry-pry/minimal
+cd /path/to/perry && cargo run --release -- compile /path/to/perry-pry/src/test_tree.ts -o /path/to/perry-pry/test_tree
+cd /path/to/perry && cargo run --release -- compile /path/to/perry-pry/src/minimal.ts -o /path/to/perry-pry/minimal
 
 # Run the compiled binary
-/Users/amlug/projects/perry-pry/pry
+/path/to/perry-pry/pry
 ```
 
 There is no test suite, linter, or package manager. The project is compiled entirely by the Perry compiler (a Rust program in the sibling `perry` repo).
@@ -80,7 +80,7 @@ All requests/responses use `snake_case` JSON.
 
 ```bash
 # Launch pry and start Geisterhand server scoped to it
-geisterhand run /Users/amlug/projects/perry-pry/pry &
+geisterhand run /path/to/perry-pry/pry &
 # Output: {"app":"pry","host":"127.0.0.1","pid":12345,"port":49152}
 # Parse PORT and PID from the JSON output
 ```

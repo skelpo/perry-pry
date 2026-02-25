@@ -6,6 +6,10 @@ Perry compiles TypeScript to native ARM64 binaries — no Electron, no browser, 
 
 ![Pry on macOS](screenshots/iphone/03_expanded.png)
 
+## Download
+
+[<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="40">](https://apps.apple.com/us/app/pry-json-viewer/id6759329040)
+
 ## Features
 
 - Tree view with expand/collapse for objects and arrays
@@ -17,7 +21,7 @@ Perry compiles TypeScript to native ARM64 binaries — no Electron, no browser, 
 ## Platforms
 
 - **macOS** — native AppKit (`src/main.ts`)
-- **iOS** — native UIKit (`src/main_ios.ts`)
+- **iOS** — native UIKit (`src/main_ios.ts`) — [App Store](https://apps.apple.com/us/app/pry-json-viewer/id6759329040)
 - **Android** — native Android Views (`src/main_android.ts`)
 
 ## Building

@@ -19,7 +19,7 @@ import { parseJsonInput } from "./json_parser"
 let currentData: any = null
 let expanded: string[] = JSON.parse('["$"]')
 let searchQuery = ""
-let matchPaths: string[] = []
+let matchPaths: string[] = JSON.parse('[]')
 let currentMatchIndex = 0
 let lastNodeCount = 0
 let lastByteSize = 0
@@ -322,7 +322,7 @@ function handleSearch(): void {
   if (searchBarVisible) {
     searchBarVisible = false
     searchQuery = ""
-    matchPaths = []
+    matchPaths = JSON.parse('[]')
     currentMatchIndex = 0
     hideSearchBar()
     rebuild()

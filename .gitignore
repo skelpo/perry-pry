@@ -7,8 +7,10 @@
 /test_scroll
 /pry-linux
 
-# Object files
+# Build artifacts
 *.o
+*.a
+*.so
 
 # App bundles
 *.app/

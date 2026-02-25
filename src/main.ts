@@ -328,7 +328,7 @@ function handleEscape(): void {
   console.log("Escape: clear search")
   searchBarVisible = false
   searchQuery = ""
-  matchPaths = []
+  matchPaths = JSON.parse('[]')
   currentMatchIndex = 0
   hideSearchBar()
   rebuild()

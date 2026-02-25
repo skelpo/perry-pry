@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 REPO_DIR="$(cd "$PROJECT_DIR/.." && pwd)"
-PERRY_DIR="/Users/amlug/projects/perry"
+PERRY_DIR="${PERRY_DIR:-$(cd "$REPO_DIR/../perry" && pwd)}"
 ARCHIVE_PATH="$PROJECT_DIR/build/Pry.xcarchive"
 EXPORT_DIR="$PROJECT_DIR/build/export"
 

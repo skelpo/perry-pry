@@ -56,7 +56,7 @@ targets:
             cp "$PERRY_BINARY" "${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}"
           else
             echo "error: Perry binary not found at $PERRY_BINARY"
-            echo "error: Run the Perry compiler first: cd /Users/amlug/projects/perry && cargo run --release -- compile /Users/amlug/projects/perry-pry/src/main.ts -o /Users/amlug/projects/perry-pry/pry"
+            echo "error: Run the Perry compiler first: cd \${PERRY_DIR:-\$(cd \"${PROJECT_DIR}/../../perry\" && pwd)} && cargo run --release -- compile ${PROJECT_DIR}/../src/main.ts -o ${PROJECT_DIR}/../pry"
             exit 1
           fi
         basedOnDependencyAnalysis: false
@@ -94,7 +94,7 @@ targets:
         script: |
           set -e
 
-          PERRY_DIR="/Users/amlug/projects/perry"
+          PERRY_DIR="${PERRY_DIR:-$(cd "${PROJECT_DIR}/../../perry" && pwd)}"
           PERRY_COMPILER="${PERRY_DIR}/target/release/perry"
           PERRY_PRY_DIR="${PROJECT_DIR}/.."
           BUILD_TMP="/tmp/perry-pry-xcode-build"
