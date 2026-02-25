@@ -20,7 +20,7 @@ Perry compiles TypeScript to native ARM64 binaries — no Electron, no browser, 
 
 ## Platforms
 
-- **macOS** — native AppKit (`src/main.ts`)
+- **macOS** — native AppKit (`src/main.ts`) — [App Store](https://apps.apple.com/app/pry-json-viewer/id6759329040)
 - **iOS** — native UIKit (`src/main_ios.ts`) — [App Store](https://apps.apple.com/us/app/pry-json-viewer/id6759329040)
 - **Android** — native Android Views (`src/main_android.ts`)
 
