@@ -1,5 +1,6 @@
 # Compiled binaries
 /pry
+/pry.exe
 /pry_test
 /debug_test
 /minimal
