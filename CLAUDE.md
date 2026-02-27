@@ -4,13 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Pry is a native macOS JSON viewer built with the Perry framework. Perry compiles TypeScript to native ARM64 binaries — there is no Electron, no browser, no Node.js runtime. The app uses Perry's UI bindings which map directly to AppKit widgets.
+Pry is a native JSON viewer built with the Perry framework. Perry compiles TypeScript to native binaries — there is no Electron, no browser, no Node.js runtime. The app uses Perry's UI bindings which map directly to platform-native widgets (AppKit on macOS, GTK4 on Linux, Win32 on Windows, UIKit on iOS, Android Views on Android).
 
 ## Build Commands
 
 ```bash
 # Compile the main app (perry repo is expected to be a sibling directory)
+# macOS
 cd /path/to/perry && cargo run --release -- compile /path/to/perry-pry/src/main.ts -o /path/to/perry-pry/pry
+# Linux (requires gtk4-devel)
+cd /path/to/perry && cargo run --release -- compile /path/to/perry-pry/src/main_linux.ts -o /path/to/perry-pry/pry
 
 # Compile test harnesses
 cd /path/to/perry && cargo run --release -- compile /path/to/perry-pry/src/test_tree.ts -o /path/to/perry-pry/test_tree
@@ -24,9 +27,11 @@ There is no test suite, linter, or package manager. The project is compiled enti
 
 ## Architecture
 
-The app is a single-window JSON tree viewer. `src/main.ts` is the entry point and contains the core app loop. The remaining `src/` files are utility modules:
+The app is a single-window JSON tree viewer. Platform-specific entry points set up the UI and call `App()`. The remaining `src/` files are shared utility modules:
 
-- **main.ts** — Entry point. Sets up the scroll view, tree container, keyboard shortcuts, and calls `App()` (which blocks forever). Contains the original inline tree builder.
+- **main.ts** — macOS entry point (AppKit). Sets up the scroll view, tree container, keyboard shortcuts, and calls `App()` (which blocks forever).
+- **main_linux.ts** — Linux entry point (GTK4). Same structure as macOS but uses Ctrl instead of Cmd.
+- **main_windows.ts** — Windows entry point (Win32). Uses Ctrl shortcuts.
 - **tree_node.ts** — `buildNode()` renders a single tree row (indent + toggle button + key + value + context menu). `buildClosingBracket()` renders `]` or `}`.
 - **tree_builder.ts** — `buildTree()` recursively walks a JSON value and calls `buildNode` for each node. `collectAllPaths()` gathers all container paths for expand-all.
 - **json_parser.ts** — `parseJsonInput()` wraps `JSON.parse` with timing, node counting, and error handling. Returns a `ParseResult`.
