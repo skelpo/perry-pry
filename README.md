@@ -1,8 +1,8 @@
 # Pry
 
-A fast, native JSON viewer built with the [Perry](https://github.com/nicklasxyz/perry) framework.
+A fast, native JSON viewer for macOS, iOS, Android, Linux, and Windows.
 
-Perry compiles TypeScript to native binaries — no Electron, no browser, no runtime. The app uses Perry's UI bindings which map directly to platform-native widgets (AppKit on macOS, GTK4 on Linux, Win32 on Windows, UIKit on iOS, Android Views on Android).
+Built with **[Perry](https://github.com/PerryTS/perry)** — a compiler that turns TypeScript into native binaries with no Electron, no browser, and no runtime.
 
 ![Pry on macOS](screenshots/iphone/03_expanded.png)
 
@@ -19,6 +19,22 @@ Perry compiles TypeScript to native binaries — no Electron, no browser, no run
 - Copy values, keys, or JSONPath to clipboard via context menu
 - Status bar with node count, file size, and parse time
 
+## How it works
+
+Pry is written in TypeScript and compiled by the [Perry compiler](https://github.com/PerryTS/perry) (a Rust program) directly to native machine code — no Node.js, no JVM, no interpreter.
+
+Perry's UI API maps to native OS widgets on each platform:
+
+| Platform | Widget toolkit | Entry point |
+|----------|---------------|-------------|
+| macOS | AppKit | `src/main.ts` |
+| iOS | UIKit | `src/main_ios.ts` |
+| Android | Android Views | `src/main_android.ts` |
+| Linux | GTK4 | `src/main_linux.ts` |
+| Windows | Win32 | `src/main_windows.ts` |
+
+The result is a small, self-contained binary that starts instantly with no GC pauses or JIT warmup.
+
 ## Platforms
 
 - **macOS** — native AppKit (`src/main.ts`) — [App Store](https://apps.apple.com/app/pry-json-viewer/id6759329040)
@@ -29,7 +45,7 @@ Perry compiles TypeScript to native binaries — no Electron, no browser, no run
 
 ## Building
 
-Pry is compiled by the Perry compiler. You need the [perry](https://github.com/nicklasxyz/perry) repo cloned as a sibling directory.
+Pry is compiled by the Perry compiler. You need the [perry](https://github.com/PerryTS/perry) repo cloned as a sibling directory.
 
 ```bash
 # macOS
